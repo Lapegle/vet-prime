@@ -32,4 +32,6 @@ Then run these commands:
 
 
 
-You can find web server on <http://0.0.0.0:80> and Mailpit on <http://0.0.0.0:8025>
+You can find web server on <http://0.0.0.0:80> and Mailpit on <http://0.0.0.0:8025>  
+
+Default login into Nova admin panel is `test@example.com` and `password`
