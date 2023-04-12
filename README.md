@@ -32,9 +32,10 @@ Then run these commands:
 - `sail artisan key:generate`
 - `sail artisan migrate --seed`
 
-
-
-You can find web server on <http://0.0.0.0:80> and Mailpit on <http://0.0.0.0:8025>  
+URL's for services are:
+- Web server: <http://0.0.0.0:80>
+- Mailpit: <http://0.0.0.0:8025>
+- Adminer: <http://0.0.0.0:8080>
 
 Default login into Nova admin panel is `test@example.com` and `password`
 
@@ -44,10 +45,3 @@ In Settings -> PHP -> Debug -> Servers absolute path on the server is `/var/www/
 everything should work as usual.  
   
 More information about debugging <https://laravel.com/docs/10.x/sail#debugging-with-xdebug>
-
-### Connecting to database
-To connect to database with external application, you can use DBeaver or any other app by using these credentials:
-- Host: localhost:3306
-- Database: vet_prime
-- Username: sail
-- Password: password
