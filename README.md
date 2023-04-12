@@ -35,3 +35,10 @@ Then run these commands:
 You can find web server on <http://0.0.0.0:80> and Mailpit on <http://0.0.0.0:8025>  
 
 Default login into Nova admin panel is `test@example.com` and `password`
+
+### XDebug
+XDebug is enabled by default in .env file. To use it, download this [extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en) on your browser.
+In Settings -> PHP -> Debug -> Servers absolute path on the server is `/var/www/html`. Start listening for PHP debug connections and
+everything should work as usual.  
+  
+More information about debugging <https://laravel.com/docs/10.x/sail#debugging-with-xdebug>
