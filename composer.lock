@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8f8accf5a9235f15e017669c84aebd9",
+    "content-hash": "9ef9a410e7737a88bb727acec0d8abd5",
     "packages": [
+        {
+            "name": "badinansoft/nova-language-switch",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/badinansoft/nova-language-switch.git",
+                "reference": "d65aea6ff3dce7875e9248e46b4db2d773d8c675"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/badinansoft/nova-language-switch/zipball/d65aea6ff3dce7875e9248e46b4db2d773d8c675",
+                "reference": "d65aea6ff3dce7875e9248e46b4db2d773d8c675",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Badinansoft\\LanguageSwitch\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Badinansoft\\LanguageSwitch\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shahab Zebari",
+                    "email": "me@shahabzebari.net",
+                    "homepage": "https://shahabzebari.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova package to switch language in your application",
+            "homepage": "https://github.com/badinansoft/nova-language-switch",
+            "keywords": [
+                "i18n",
+                "language",
+                "laravel",
+                "nova",
+                "switch",
+                "translation"
+            ],
+            "support": {
+                "issues": "https://github.com/badinansoft/nova-language-switch/issues",
+                "source": "https://github.com/badinansoft/nova-language-switch/tree/1.2.0"
+            },
+            "time": "2023-02-28T13:35:20+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.10.2",
