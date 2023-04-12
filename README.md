@@ -42,3 +42,10 @@ In Settings -> PHP -> Debug -> Servers absolute path on the server is `/var/www/
 everything should work as usual.  
   
 More information about debugging <https://laravel.com/docs/10.x/sail#debugging-with-xdebug>
+
+### Connecting to database
+To connect to database with external application, you can use DBeaver or any other app by using these credentials:
+- Host: localhost:3306
+- Database: vet_prime
+- Username: sail
+- Password: password
