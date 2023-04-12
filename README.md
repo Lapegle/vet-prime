@@ -18,6 +18,8 @@ Then execute this command
 ```
 Now run `./vendor/bin/sail up`. Add `-d` to run in background.
 
+>Note: Lando proxy interferes with Sail, so be sure to run `lando poweroff` beforehand.
+
 >However, instead of repeatedly typing vendor/bin/sail to execute Sail commands, you may wish to configure a shell alias that allows you to execute Sail's commands more easily:
 >```
 >alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
