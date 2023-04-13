@@ -48,7 +48,8 @@ class Species extends Resource
             Text::make(__('Name'), 'name')
                 ->rules('required'),
 
-            FontAwesome::make(__('Icon'), 'icon'),
+            FontAwesome::make(__('Icon'), 'icon')
+                ->hideStyleSelector(),
 
             HasMany::make(__('Breeds'), 'breeds', Breed::class)
         ];
