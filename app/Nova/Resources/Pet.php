@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
+use NormanHuth\FontAwesomeField\FontAwesome;
 
 class Pet extends Resource
 {
@@ -52,10 +53,16 @@ class Pet extends Resource
             Text::make(__('Pet Name'), 'name')
                 ->rules('required'),
 
-            BelongsTo::make(__('Species'), 'species', Species::class)
-                ->rules('required'),
+            FontAwesome::make(__('Singular Species'), function () {
+                return $this->species->icon;
+            })->onlyOnIndex(),
 
-            BelongsTo::make(__('Breed'), 'breed', Breed::class),
+            BelongsTo::make(__('Singular Species'), 'species', Species::class)
+                ->rules('required')
+                ->hideFromIndex(),
+
+            BelongsTo::make(__('Breed'), 'breed', Breed::class)
+                ->nullable(),
 
             Text::make(__('Color'), 'color'),
 
