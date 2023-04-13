@@ -43,13 +43,13 @@ class Client extends Resource
             ID::make()
                 ->sortable(),
 
-            Text::make('Full name')
+            Text::make(__("Full Name"), 'full_name')
                 ->sortable(),
 
-            Text::make('Phone number')
+            Text::make(__('Phone Number'), 'phone_number')
                 ->sortable(),
 
-            Text::make('Email')
+            Text::make(__('Email'), "email")
                 ->rules('email', 'nullable')
                 ->sortable(),
         ];
@@ -97,5 +97,45 @@ class Client extends Resource
     public function actions(NovaRequest $request)
     {
         return [];
+    }
+
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('Clients');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('Client');
+    }
+
+    /**
+     * Get the text for the create resource button.
+     *
+     * @return string|null
+     */
+    public static function createButtonLabel()
+    {
+        return __('Create Client');
+    }
+
+    /**
+     * Get the text for the update resource button.
+     *
+     * @return string|null
+     */
+    public static function updateButtonLabel()
+    {
+        return __('Atjaunināt ');
     }
 }
