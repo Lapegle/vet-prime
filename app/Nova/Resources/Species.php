@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use NormanHuth\FontAwesomeField\FontAwesome;
 
 class Species extends Resource
 {
@@ -44,7 +45,10 @@ class Species extends Resource
             ID::make()
                 ->sortable(),
 
-            Text::make(__('Name'), 'name'),
+            Text::make(__('Name'), 'name')
+                ->rules('required'),
+
+            FontAwesome::make(__('Icon'), 'icon'),
 
             HasMany::make(__('Breeds'), 'breeds', Breed::class)
         ];
