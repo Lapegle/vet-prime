@@ -8,18 +8,23 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Nova\Actions\Actionable;
 
-class Client extends Model
+class Species extends Model
 {
     use HasFactory, SoftDeletes, Actionable;
 
     protected $fillable = [
-        'full_name',
-        'phone_number',
-        'email',
+        'name',
+        'icon'
     ];
 
     public function pets(): HasMany
     {
         return $this->hasMany(Pet::class);
     }
+
+    public function breeds(): HasMany
+    {
+        return $this->hasMany(Breed::class);
+    }
+
 }

@@ -4,5 +4,20 @@
     "Create Client": "Izveidot klientu",
     "Full Name": "Vārds un uzvārds",
     "Phone Number": "Telefona numurs",
-    "Email": "E-pasts"
+    "Email": "E-pasts",
+    "Multiple Species": "Sugas",
+    "Singular Species": "Suga",
+    "Create Species": "Izveidot sugu",
+    "Name": "Nosaukums",
+    "Breeds": "Šķirnes",
+    "Breed": "Šķirne",
+    "Create Breed": "Izveidot šķirni",
+    "Pets": "Dzīvnieki",
+    "Pet": "Dzīvnieks",
+    "Create Pet": "Izveidot dzīvnieku",
+    "Sex": "Dzimums",
+    "Birth Date": "Dzimšanas datums",
+    "Color": "Krāsa",
+    "Address": "Adrese",
+    "Pet Name": "Dzīvnieka vārds"
 }

@@ -2,26 +2,26 @@
 
 namespace App\Nova\Resources;
 
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Client extends Resource
+class Breed extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Client>
+     * @var class-string<\App\Models\Breed>
      */
-    public static $model = \App\Models\Client::class;
+    public static $model = \App\Models\Breed::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'full_name';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -29,7 +29,7 @@ class Client extends Resource
      * @var array
      */
     public static $search = [
-        'full_name', 'phone_number', 'email'
+        'name',
     ];
 
     /**
@@ -44,17 +44,10 @@ class Client extends Resource
             ID::make()
                 ->sortable(),
 
-            Text::make(__("Full Name"), 'full_name')
-                ->sortable(),
+            BelongsTo::make(__('Singular Species'), 'species', Species::class)
+                ->rules('required'),
 
-            Text::make(__('Phone Number'), 'phone_number')
-                ->sortable(),
-
-            Text::make(__('Email'), "email")
-                ->rules('email', 'nullable')
-                ->sortable(),
-
-            HasMany::make(__('Pets'), 'pets', Pet::class)
+            Text::make(__('Name'), 'name')
         ];
     }
 
@@ -109,7 +102,7 @@ class Client extends Resource
      */
     public static function label()
     {
-        return __('Clients');
+        return __('Breeds');
     }
 
     /**
@@ -119,7 +112,7 @@ class Client extends Resource
      */
     public static function singularLabel()
     {
-        return __('Client');
+        return __('Breed');
     }
 
     /**
@@ -129,6 +122,6 @@ class Client extends Resource
      */
     public static function createButtonLabel()
     {
-        return __('Create Client');
+        return __('Create Breed');
     }
 }

@@ -7,21 +7,21 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Client extends Resource
+class Species extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Client>
+     * @var class-string<\App\Models\Species>
      */
-    public static $model = \App\Models\Client::class;
+    public static $model = \App\Models\Species::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'full_name';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -29,7 +29,7 @@ class Client extends Resource
      * @var array
      */
     public static $search = [
-        'full_name', 'phone_number', 'email'
+        'name',
     ];
 
     /**
@@ -44,17 +44,9 @@ class Client extends Resource
             ID::make()
                 ->sortable(),
 
-            Text::make(__("Full Name"), 'full_name')
-                ->sortable(),
+            Text::make(__('Name'), 'name'),
 
-            Text::make(__('Phone Number'), 'phone_number')
-                ->sortable(),
-
-            Text::make(__('Email'), "email")
-                ->rules('email', 'nullable')
-                ->sortable(),
-
-            HasMany::make(__('Pets'), 'pets', Pet::class)
+            HasMany::make(__('Breeds'), 'breeds', Breed::class)
         ];
     }
 
@@ -109,7 +101,7 @@ class Client extends Resource
      */
     public static function label()
     {
-        return __('Clients');
+        return __('Multiple Species');
     }
 
     /**
@@ -119,7 +111,7 @@ class Client extends Resource
      */
     public static function singularLabel()
     {
-        return __('Client');
+        return __('Singular Species');
     }
 
     /**
@@ -129,6 +121,6 @@ class Client extends Resource
      */
     public static function createButtonLabel()
     {
-        return __('Create Client');
+        return __('Create Species');
     }
 }

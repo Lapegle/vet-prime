@@ -4,5 +4,18 @@
     "Create Client": "Create Client",
     "Full Name": "Full Name",
     "Phone Number": "Phone Number",
-    "Email": "Email"
+    "Email": "Email",
+    "Multiple Species": "Species",
+    "Singular Species": "Species",
+    "Create Species": "Create Species",
+    "Name": "Name",
+    "Create Breed": "Create Breed",
+    "Pets": "Pets",
+    "Pet": "Pet",
+    "Create Pet": "Create Pet",
+    "Sex": "Sex",
+    "Birth Date": "Birth Date",
+    "Color": "Color",
+    "Address": "Address",
+    "Pet Name": "Pet Name"
 }
