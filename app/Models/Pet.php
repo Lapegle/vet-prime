@@ -22,6 +22,10 @@ class Pet extends Model
         'address'
     ];
 
+    protected $casts = [
+        'birth_date' => 'date'
+    ];
+
     public function client(): BelongsTo
     {
         return $this->belongsTo(Client::class);
