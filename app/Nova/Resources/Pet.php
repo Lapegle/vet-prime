@@ -54,7 +54,7 @@ class Pet extends Resource
                 ->rules('required'),
 
             FontAwesome::make(__('Singular Species'), function () {
-                return $this->species->icon;
+                return $this->species->icon ?? null;
             })->onlyOnIndex(),
 
             BelongsTo::make(__('Singular Species'), 'species', Species::class)
