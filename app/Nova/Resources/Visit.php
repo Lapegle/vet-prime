@@ -4,28 +4,27 @@ namespace App\Nova\Resources;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
-use NormanHuth\FontAwesomeField\FontAwesome;
 
-class Pet extends Resource
+class Visit extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Pet>
+     * @var class-string<\App\Models\Appointment>
      */
-    public static $model = \App\Models\Pet::class;
+    public static $model = \App\Models\Visit::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -33,7 +32,7 @@ class Pet extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'id',
     ];
 
     /**
@@ -48,34 +47,26 @@ class Pet extends Resource
             ID::make()
                 ->sortable(),
 
-            BelongsTo::make(__('Client'), 'client', Client::class)
-                ->rules('required'),
+            BelongsTo::make(__('Pet'), 'pet', Pet::class),
 
-            Text::make(__('Pet Name'), 'name')
-                ->rules('required'),
+            Textarea::make(__('History'), 'history')
+                ->rows(3)
+                ->alwaysShow(),
 
-            FontAwesome::make(__('Singular Species'), function () {
-                return $this->species->icon ?? null;
-            })->onlyOnIndex(),
+            Textarea::make(__('Diagnosis'), 'diagnosis')
+                ->rows(3)
+                ->alwaysShow(),
 
-            BelongsTo::make(__('Singular Species'), 'species', Species::class)
-                ->rules('required')
-                ->hideFromIndex(),
+            Textarea::make(__('Instructions'), 'instructions')
+                ->rows(3)
+                ->alwaysShow(),
 
-            BelongsTo::make(__('Breed'), 'breed', Breed::class)
-                ->nullable(),
+            Textarea::make(__('Notes'), 'notes')
+                ->rows(3)
+                ->alwaysShow(),
 
-            Text::make(__('Color'), 'color'),
-
-            Text::make(__('Sex'), 'sex')
-                ->rules('required'),
-
-            Date::make(__('Birth Date'), 'birth_date'),
-
-            Text::make(__('Address'), 'address'),
-
-            HasMany::make(__('Visits'), 'visits', Visit::class)
-
+            Date::make(__('Created at'), 'created_at')
+                ->exceptOnForms()
         ];
     }
 
@@ -130,7 +121,7 @@ class Pet extends Resource
      */
     public static function label()
     {
-        return __('Pets');
+        return __('Appointments');
     }
 
     /**
@@ -140,7 +131,7 @@ class Pet extends Resource
      */
     public static function singularLabel()
     {
-        return __('Pet');
+        return __('Appointments');
     }
 
     /**
@@ -150,6 +141,6 @@ class Pet extends Resource
      */
     public static function createButtonLabel()
     {
-        return __('Create Pet');
+        return __('Create Visit');
     }
 }

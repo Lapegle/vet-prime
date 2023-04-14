@@ -18,5 +18,14 @@
     "Color": "Color",
     "Address": "Address",
     "Pet Name": "Pet Name",
-    "Icon": "Icon"
+    "Icon": "Icon",
+    "Visits": "Visits",
+    "Visit": "Visit",
+    "Create Visit": "Create Visit",
+    "History": "History",
+    "Diagnosis": "Diagnosis",
+    "Instructions": "Instructions",
+    "Notes": "Notes",
+    "Created at": "Created at",
+    "Updated at": "Updated at"
 }

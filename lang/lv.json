@@ -20,5 +20,14 @@
     "Color": "Krāsa",
     "Address": "Adrese",
     "Pet Name": "Dzīvnieka vārds",
-    "Icon": "Ikona"
+    "Icon": "Ikona",
+    "Visits": "Apmeklējumi",
+    "Visit": "Apmeklējums",
+    "Create Visit": "Izveidot apmeklējumu",
+    "History": "Anamnēze",
+    "Diagnosis": "Diagnoze",
+    "Instructions": "Instrukcijas",
+    "Notes": "Piezīmes",
+    "Created at": "Izveidots",
+    "Updated at": "Atjaunināts"
 }
