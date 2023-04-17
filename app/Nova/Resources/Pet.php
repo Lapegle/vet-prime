@@ -49,6 +49,7 @@ class Pet extends Resource
                 ->sortable(),
 
             BelongsTo::make(__('Client'), 'client', Client::class)
+                ->showCreateRelationButton()
                 ->rules('required'),
 
             Text::make(__('Pet Name'), 'name')
