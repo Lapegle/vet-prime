@@ -121,7 +121,7 @@ class Visit extends Resource
      */
     public static function label()
     {
-        return __('Appointments');
+        return __('Visits');
     }
 
     /**
@@ -131,7 +131,7 @@ class Visit extends Resource
      */
     public static function singularLabel()
     {
-        return __('Appointments');
+        return __('Visit');
     }
 
     /**
