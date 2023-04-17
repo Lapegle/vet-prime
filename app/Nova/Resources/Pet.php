@@ -60,9 +60,11 @@ class Pet extends Resource
 
             BelongsTo::make(__('Singular Species'), 'species', Species::class)
                 ->rules('required')
+                ->showCreateRelationButton()
                 ->hideFromIndex(),
 
             BelongsTo::make(__('Breed'), 'breed', Breed::class)
+                ->showCreateRelationButton()
                 ->nullable(),
 
             Text::make(__('Color'), 'color'),
