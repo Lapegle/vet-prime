@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Nova\Actions\Actionable;
+use Whitecube\NovaFlexibleContent\Value\FlexibleCast;
 
 class Visit extends Model
 {
@@ -18,6 +19,11 @@ class Visit extends Model
         'diagnosis',
         'instructions',
         'notes'
+    ];
+
+    protected $casts = [
+        'medicaments' => FlexibleCast::class,
+        'procedures' => FlexibleCast::class
     ];
 
     public function pet(): BelongsTo

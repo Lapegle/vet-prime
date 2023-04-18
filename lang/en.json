@@ -27,5 +27,15 @@
     "Instructions": "Instructions",
     "Notes": "Notes",
     "Created at": "Created at",
-    "Updated at": "Updated at"
+    "Updated at": "Updated at",
+    "Procedures": "Procedures",
+    "Procedure": "Procedure",
+    "Add Procedure": "Add Procedure",
+    "Create Procedure": "Create Procedure",
+    "Medicaments": "Medicaments",
+    "Medicament": "Medicament",
+    "Add Medicament": "Add Medicament",
+    "Create Medicament": "Create Medicament",
+    "Price": "Price",
+    "Dosage": "Dosage"
 }

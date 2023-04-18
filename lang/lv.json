@@ -29,5 +29,15 @@
     "Instructions": "Instrukcijas",
     "Notes": "Piezīmes",
     "Created at": "Izveidots",
-    "Updated at": "Atjaunināts"
+    "Updated at": "Atjaunināts",
+    "Procedures": "Procedūras",
+    "Procedure": "Procedūra",
+    "Add Procedure": "Pievienot procedūru",
+    "Create Procedure": "Izveidot procedūru",
+    "Medicaments": "Medikamenti",
+    "Medicament": "Medikaments",
+    "Add Medicament": "Pievienot medikamentu",
+    "Create Medicament": "Izveidot medikamentu",
+    "Price": "Cena",
+    "Dosage": "Doza"
 }

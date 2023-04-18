@@ -4,11 +4,13 @@ namespace App\Nova\Resources;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Resource;
+use Laravel\Nova\Panel;
+use Whitecube\NovaFlexibleContent\Flexible;
 
 class Visit extends Resource
 {
@@ -66,7 +68,35 @@ class Visit extends Resource
                 ->alwaysShow(),
 
             Date::make(__('Created at'), 'created_at')
-                ->exceptOnForms()
+                ->exceptOnForms(),
+
+            new Panel(__('Procedures'), [
+                Flexible::make('', 'procedures')
+                    ->addLayout(__('Procedure'), 'procedures', [
+                        Select::make(__('Medicament'))
+                            ->options(\App\Models\Procedure::pluck('name', 'id'))
+                            ->displayUsingLabels(),
+
+                        Textarea::make(__('Notes'))
+                            ->rows(3)
+                            ->alwaysShow()
+                    ])
+                    ->button(__('Add Procedure'))
+                    ->fullWidth()
+            ]),
+
+            new Panel(__('Medicaments'), [
+                Flexible::make('', 'medicaments')
+                    ->addLayout(__('Medicament'), 'medicaments', [
+                        Select::make(__('Medicament'))
+                            ->options(\App\Models\Medicament::pluck('name', 'id'))
+                            ->displayUsingLabels(),
+
+                        Text::make(__('Dosage'))
+                    ])
+                    ->button(__('Add Medicament'))
+                    ->fullWidth()
+            ])
         ];
     }
 
