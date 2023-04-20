@@ -3,14 +3,17 @@
 namespace App\Providers;
 
 use App\Nova\Dashboards\Main;
+use App\Nova\Resources\Breed;
 use App\Nova\Resources\Client;
 use App\Nova\Resources\Medicament;
 use App\Nova\Resources\Pet;
 use App\Nova\Resources\Procedure;
+use App\Nova\Resources\Species;
 use App\Nova\Resources\User;
 use App\Nova\Resources\Visit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Nova\Menu\MenuGroup;
 use Laravel\Nova\Menu\MenuItem;
 use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
@@ -40,8 +43,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     ->icon('archive'),
 
                 MenuSection::make(__('Taxonomies'), [
-                    MenuItem::resource(Medicament::class),
-                    MenuItem::resource(Procedure::class),
+                    MenuGroup::make(__('Services'), [
+                        MenuItem::resource(Medicament::class),
+                        MenuItem::resource(Procedure::class),
+                    ]),
+                    MenuGroup::make(__('Animal Classifiers'), [
+                        MenuItem::resource(Species::class),
+                        MenuItem::resource(Breed::class),
+                    ])
                 ])
                     ->collapsable()
                     ->icon('database'),
