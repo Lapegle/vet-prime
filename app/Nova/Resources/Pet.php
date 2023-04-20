@@ -2,10 +2,12 @@
 
 namespace App\Nova\Resources;
 
+use App\Enums\Sex;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use NormanHuth\FontAwesomeField\FontAwesome;
@@ -69,8 +71,9 @@ class Pet extends Resource
 
             Text::make(__('Color'), 'color'),
 
-            Text::make(__('Sex'), 'sex')
-                ->rules('required'),
+            Select::make(__('Sex'), 'sex')
+                ->options(Sex::cases())
+                ->displayUsingLabels(),
 
             Date::make(__('Birth Date'), 'birth_date'),
 
