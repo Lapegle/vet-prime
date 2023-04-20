@@ -39,5 +39,10 @@
     "Add Medicament": "Pievienot medikamentu",
     "Create Medicament": "Izveidot medikamentu",
     "Price": "Cena",
-    "Dosage": "Doza"
+    "Dosage": "Doza",
+    "Users": "Lietotāji",
+    "User": "Lietotājs",
+    "Create User": "Izveidot lietotāju",
+    "Password": "Parole",
+    "Avatar": "Avatārs"
 }

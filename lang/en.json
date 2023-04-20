@@ -37,5 +37,10 @@
     "Add Medicament": "Add Medicament",
     "Create Medicament": "Create Medicament",
     "Price": "Price",
-    "Dosage": "Dosage"
+    "Dosage": "Dosage",
+    "Users": "Users",
+    "User": "User",
+    "Create User": "Create User",
+    "Password": "Password",
+    "Avatar": "Avatar"
 }
