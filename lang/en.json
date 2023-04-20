@@ -42,5 +42,7 @@
     "User": "User",
     "Create User": "Create User",
     "Password": "Password",
-    "Avatar": "Avatar"
+    "Avatar": "Avatar",
+    "Journal": "Journal",
+    "Taxonomies": "Taxonomies"
 }

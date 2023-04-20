@@ -2,7 +2,17 @@
 
 namespace App\Providers;
 
+use App\Nova\Dashboards\Main;
+use App\Nova\Resources\Client;
+use App\Nova\Resources\Medicament;
+use App\Nova\Resources\Pet;
+use App\Nova\Resources\Procedure;
+use App\Nova\Resources\User;
+use App\Nova\Resources\Visit;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Nova\Menu\MenuItem;
+use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
@@ -16,6 +26,30 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        Nova::mainMenu(function (Request $request) {
+            return [
+                MenuSection::dashboard(Main::class)->icon('home'),
+
+                MenuSection::make(__('Journal'), [
+                    MenuItem::resource(Client::class),
+                    MenuItem::resource(Pet::class),
+                    MenuItem::resource(Visit::class)
+                ])
+                    ->collapsable()
+                    ->icon('archive'),
+
+                MenuSection::make(__('Taxonomies'), [
+                    MenuItem::resource(Medicament::class),
+                    MenuItem::resource(Procedure::class),
+                ])
+                    ->collapsable()
+                    ->icon('database'),
+
+                MenuSection::resource(User::class)
+                    ->icon('identification')
+            ];
+        });
     }
 
     /**
