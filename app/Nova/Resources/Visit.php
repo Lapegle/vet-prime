@@ -2,6 +2,7 @@
 
 namespace App\Nova\Resources;
 
+use App\Nova\Actions\SendSurvey;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
@@ -141,7 +142,11 @@ class Visit extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            (new SendSurvey)
+                ->confirmText(__('Choose survey and email to send it to'))
+                ->confirmButtonText(__('Send'))
+        ];
     }
 
     /**

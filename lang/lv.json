@@ -49,5 +49,16 @@
     "Taxonomies": "Taksonomijas",
     "Services": "Pakalpojumi",
     "Animal Classifiers": "Dzīvnieku klasifikatori",
-    "Main": "Galvenā lapa"
+    "Main": "Galvenā lapa",
+    "Surveys": "Aptaujas",
+    "Survey": "Aptauja",
+    "Add Survey": "Pievienot aptauju ",
+    "Create Survey": "Izveidot aptauju",
+    "Title": "Title",
+    "Description": "Description",
+    "Questions": "Jautājumi",
+    "Question": "Jautājums",
+    "Add Question": "Pievienot jautājumu",
+    "Create Question": "Izveidot jautājumu",
+    "Question text": "Jautājuma teksts"
 }

@@ -3,12 +3,16 @@
 namespace App\Providers;
 
 use App\Nova\Dashboards\Main;
+use App\Nova\Resources\Answer;
 use App\Nova\Resources\Breed;
 use App\Nova\Resources\Client;
 use App\Nova\Resources\Medicament;
 use App\Nova\Resources\Pet;
 use App\Nova\Resources\Procedure;
+use App\Nova\Resources\Question;
+use App\Nova\Resources\SentSurvey;
 use App\Nova\Resources\Species;
+use App\Nova\Resources\Survey;
 use App\Nova\Resources\User;
 use App\Nova\Resources\Visit;
 use Illuminate\Http\Request;
@@ -54,6 +58,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ])
                     ->collapsable()
                     ->icon('database'),
+
+                MenuSection::make(__('Surveys'), [
+                    MenuItem::resource(Survey::class),
+                    MenuItem::resource(Question::class),
+                    MenuItem::resource(SentSurvey::class),
+                    MenuItem::resource(Answer::class)
+                ])
+                    ->collapsable()
+                    ->icon('document-text'),
 
                 MenuSection::resource(User::class)
                     ->icon('identification')

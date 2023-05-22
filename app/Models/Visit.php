@@ -30,4 +30,9 @@ class Visit extends Model
     {
         return $this->belongsTo(Pet::class);
     }
+
+    public function surveys()
+    {
+        return $this->morphMany(SentSurvey::class, 'surveyable');
+    }
 }

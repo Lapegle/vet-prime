@@ -47,5 +47,16 @@
     "Taxonomies": "Taxonomies",
     "Services": "Services",
     "Animal Classifiers": "Animal Classifiers",
-    "Main": "Main"
+    "Main": "Main",
+    "Surveys": "Surveys",
+    "Survey": "Survey",
+    "Add Survey": "Add Survey",
+    "Create Survey": "Create Survey",
+    "Title": "Title",
+    "Description": "Description",
+    "Questions": "Questions",
+    "Question": "Question",
+    "Add Question": "Add Question",
+    "Create Question": "Create Question",
+    "Question text": "Question text"
 }
