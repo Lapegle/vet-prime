@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('sent_surveys', function (Blueprint $table) {
             $table->id();
             $table->uuid('token');
+            $table->foreignId('survey_id');
             $table->morphs('surveyable');
             $table->boolean('is_answered')->default(0);
             $table->timestamps();
