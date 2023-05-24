@@ -14,6 +14,11 @@ class SentSurvey extends Model
 {
     use HasFactory, SoftDeletes, Actionable;
 
+    protected $fillable = [
+        'survey_id',
+        'token'
+    ];
+
     public function surveyable(): MorphTo
     {
         return $this->morphTo();

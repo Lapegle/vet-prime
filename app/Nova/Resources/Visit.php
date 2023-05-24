@@ -74,7 +74,7 @@ class Visit extends Resource
             new Panel(__('Procedures'), [
                 Flexible::make('', 'procedures')
                     ->addLayout(__('Procedure'), 'procedures', [
-                        Select::make(__('Medicament'))
+                        Select::make(__('Procedure'))
                             ->options(\App\Models\Procedure::pluck('name', 'id'))
                             ->displayUsingLabels(),
 
@@ -146,6 +146,7 @@ class Visit extends Resource
             (new SendSurvey)
                 ->confirmText(__('Choose survey and email to send it to'))
                 ->confirmButtonText(__('Send'))
+                ->exceptOnIndex()
         ];
     }
 

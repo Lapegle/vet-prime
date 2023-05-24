@@ -2,9 +2,9 @@
 
 namespace App\Nova\Actions;
 
+use App\Actions\Surveys\SaveAndSendSurvey;
 use App\Models\Survey;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
@@ -26,7 +26,9 @@ class SendSurvey extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        //
+        SaveAndSendSurvey::execute($fields->survey_id, $fields->email, $models[0]);
+
+        return Action::message(__('Email sent'));
     }
 
     /**

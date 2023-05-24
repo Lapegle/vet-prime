@@ -14,7 +14,9 @@ return new class extends Migration {
             $table->id();
             $table->uuid('token');
             $table->foreignId('survey_id');
-            $table->morphs('surveyable');
+            $table->string('surveyable_type')->nullable();
+            $table->foreignId('surveyable_id')->nullable();
+            $table->string('email');
             $table->boolean('is_answered')->default(0);
             $table->timestamps();
             $table->softDeletes();
