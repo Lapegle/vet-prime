@@ -28,6 +28,7 @@ class SendSurvey extends Action
     {
         SaveAndSendSurvey::execute($fields->survey_id, $fields->email, $models[0]);
 
+
         return Action::message(__('Email sent'));
     }
 

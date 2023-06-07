@@ -46,7 +46,7 @@ class SentSurvey extends Resource
             ID::make()
                 ->sortable(),
 
-            Text::make(__('token'), 'token'),
+            Text::make(__('Sent to'), 'email'),
 
             MorphTo::make(__('Surveyable'), 'surveyable')
                 ->types([

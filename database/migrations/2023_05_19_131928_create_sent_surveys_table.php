@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('surveyable_type')->nullable();
             $table->foreignId('surveyable_id')->nullable();
             $table->string('email');
-            $table->boolean('is_answered')->default(0);
+            $table->boolean('is_completed')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

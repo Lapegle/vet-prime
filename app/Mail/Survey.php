@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\SentSurvey;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -9,14 +10,14 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class SurveySent extends Mailable
+class Survey extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(protected SentSurvey $sentSurvey)
     {
         //
     }
@@ -27,7 +28,7 @@ class SurveySent extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Survey Sent',
+            subject: 'Survey',
         );
     }
 
@@ -37,7 +38,10 @@ class SurveySent extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            markdown: 'emails.survey',
+            with: [
+                'surveyTitle' => $this->sentSurvey->survey->title
+            ]
         );
     }
 

@@ -16,7 +16,8 @@ class SentSurvey extends Model
 
     protected $fillable = [
         'survey_id',
-        'token'
+        'token',
+        'email'
     ];
 
     public function surveyable(): MorphTo
