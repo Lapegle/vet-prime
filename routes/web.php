@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Pages\SurveyPageController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/nova');
 });
+
+Route::get('/survey/{token}', SurveyPageController::class);
