@@ -1,6 +1,7 @@
 <template>
-    <div class="min-h-screen bg-[url('/images/survey-background.jpg')] bg-cover">
-        <div class="mx-auto w-full max-w-[750px] bg-white flex justify-center py-2 shadow-inner">
+    <div class="h-screen bg-[url('/images/survey-background.jpg')] bg-cover flex justify-center items-center">
+        <div
+            class="mx-auto w-full max-w-[750px] flex justify-center py-2 shadow-2xl rounded bg-white">
             <div class="w-5/6">
                 <h1 class="text-center text-3xl">{{ props.sentSurvey.survey.title }}</h1>
                 <div v-if="currentQuestion">
@@ -52,10 +53,7 @@
                     <p>Survey completed! Thank you.</p>
                 </div>
             </div>
-
-
         </div>
-
     </div>
 </template>
 
