@@ -45,8 +45,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
 
                 <div v-else>
@@ -62,6 +60,7 @@ import {ref, computed} from 'vue';
 import TextareaInput from "../Components/Inputs/TextareaInput.vue";
 import RatingInput from "../Components/Inputs/RatingInput.vue";
 import ProgressBar from "../Components/Survey/ProgressBar.vue";
+import {router} from '@inertiajs/vue3'
 
 const props = defineProps({
     sentSurvey: Object,
@@ -73,11 +72,24 @@ const currentQuestion = computed(() => props.sentSurvey.survey.questions[current
 const hasPreviousQuestion = computed(() => currentQuestionIndex.value > 0);
 const hasNextQuestion = computed(() => currentQuestionIndex.value < props.sentSurvey.survey.questions.length - 1);
 
+const allQuestionsAnswered = computed(() => props.sentSurvey.survey.questions.every((question) => question?.answer != null && question?.rating != null))
+
 function previousQuestion() {
     currentQuestionIndex.value--;
 }
 
 function nextQuestion() {
     currentQuestionIndex.value++;
+}
+
+function submitSurvey() {
+    router.post('/survey/' + props.sentSurvey.token, props.sentSurvey, {
+        onError: () => {
+            alert("Not all questions have been answered!")
+        },
+        onSuccess: () => {
+            router.visit('/survey/thanks')
+        }
+    });
 }
 </script>

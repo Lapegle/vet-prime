@@ -5,6 +5,7 @@
             name="rating-4"
             class="rating-hidden"
             value="0"
+            :checked="0 === modelValue"
             @input="$emit('update:modelValue', Number($event.target.value))"
             checked
         />
@@ -18,7 +19,6 @@
             class="mask mask-star-2 bg-accent"
         />
     </div>
-
 </template>
 
 <script setup>
@@ -32,6 +32,4 @@ const props = defineProps({
         default: 0
     }
 });
-
-console.log(props.modelValue)
 </script>
